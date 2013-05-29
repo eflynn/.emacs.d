@@ -10,9 +10,12 @@
 (ido-mode 1)
 
 ;; Turn off menus, toolbar, and scrollbars.
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(menu-bar-mode 0)
+
+(if window-system
+    (progn
+      (tool-bar-mode 0)
+      (scroll-bar-mode 0)))
 
 (windmove-default-keybindings)
 (setq make-backup-files nil)
