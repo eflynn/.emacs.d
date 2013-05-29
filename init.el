@@ -2,9 +2,9 @@
 (require 'color-theme)
 
 (eval-after-load "color-theme"
-		'(progn
-		   (color-theme-initialize)
-		   (color-theme-hober)))
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)))
 
 (color-theme-midnight)
 (ido-mode 1)
