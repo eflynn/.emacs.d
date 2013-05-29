@@ -8,7 +8,11 @@
 
 (color-theme-midnight)
 (ido-mode 1)
+
+;; Turn off menus, toolbar, and scrollbars.
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
+
 (windmove-default-keybindings)
 (setq make-backup-files nil)
