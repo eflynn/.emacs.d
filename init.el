@@ -19,3 +19,4 @@
 
 (windmove-default-keybindings)
 (setq make-backup-files nil)
+(server-start)
