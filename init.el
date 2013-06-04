@@ -18,5 +18,6 @@
       (scroll-bar-mode 0)))
 
 (windmove-default-keybindings)
-(setq make-backup-files nil)
+(setq make-backup-files nil
+      css-indent-offset 2)
 (server-start)
