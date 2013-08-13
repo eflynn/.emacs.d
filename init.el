@@ -1,5 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/magit/")
 
+(require 'magit)
 (require 'color-theme)
 
 (eval-after-load "color-theme"
@@ -29,6 +31,7 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
