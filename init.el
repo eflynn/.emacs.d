@@ -39,4 +39,7 @@
       mouse-yank-at-point t
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
-					       "backups"))))
+					       "backups")))
+      inhibit-startup-message t)
+
+(set-face-attribute 'default nil :font "Terminus-11")
