@@ -33,6 +33,9 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+(column-number-mode 1)
+(windmove-default-keybindings)
+
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (setq x-select-enable-clipboard t
