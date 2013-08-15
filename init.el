@@ -49,7 +49,7 @@
                                     ,(make-char 'greek-iso8859-7 107))
                     nil))))))
 
-(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
+;;(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
 
 (defconst edawg-java-style
   '((c-basic-offset . 2)
