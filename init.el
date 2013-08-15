@@ -50,3 +50,16 @@
                     nil))))))
 
 (add-hook 'prog-mode-hook 'esk-pretty-lambdas)
+
+(defconst edawg-java-style
+  '((c-basic-offset . 2)
+    (indent-tabs-mode . nil))
+  "Java programming style.")
+
+(defun edawg-set-java-style ()
+  (interactive)
+  (make-local-variable 'c-tab-always-indent)
+  (setq c-tab-always-indent t)
+  (c-add-style "Edawg" edawg-java-style t))
+
+(add-hook 'java-mode-hook 'edawg-set-java-style)
