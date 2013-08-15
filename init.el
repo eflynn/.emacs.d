@@ -49,3 +49,12 @@
       inhibit-startup-message t)
 
 (set-face-attribute 'default nil :font "Terminus-11")
+
+(defun esk-pretty-lambdas ()
+  (font-lock-add-keywords
+   nil `(("(?\\(lambda\\>\\)"
+          (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                    ,(make-char 'greek-iso8859-7 107))
+                    nil))))))
+
+(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
