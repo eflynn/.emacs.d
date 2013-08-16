@@ -1,5 +1,5 @@
-(dolist (path '("~/.emacs.d/" "~/.emacs.d/magit"))
-  (add-to-list 'load-path path))
+(dolist (path '("" "magit/"))
+  (add-to-list 'load-path (concat user-emacs-directory path)))
 
 (require 'magit)
 (require 'color-theme)
