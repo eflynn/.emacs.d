@@ -10,4 +10,6 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; God mode
+(global-set-key (kbd "<escape>") 'god-local-mode)
 (provide 'bindings)

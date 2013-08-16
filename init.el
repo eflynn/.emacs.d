@@ -21,6 +21,7 @@
 (require 'magit)
 (require 'color-theme)
 (require 'bindings)
+(require 'god-mode)
 
 (eval-after-load "color-theme"
   '(progn
