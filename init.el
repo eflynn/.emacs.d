@@ -1,3 +1,10 @@
+;; Turn off mouse interface early in startup to avoid momentary display
+(menu-bar-mode -1)
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
 (dolist (path '("" "magit/"))
   (add-to-list 'load-path (concat user-emacs-directory path)))
 
@@ -13,11 +20,6 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
-(menu-bar-mode -1)
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
