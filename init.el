@@ -52,7 +52,14 @@
 					       "backups")))
       inhibit-startup-message t)
 
-(set-face-attribute 'default nil :font "Terminus-11")
+(require 'cl)
+(defun font-candidate (&rest fonts)
+  "Return existing font which first match."
+  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+
+(set-face-attribute
+ 'default nil
+ :font (font-candidate "Terminus-11" "Courier New-11"))
 
 (defun esk-pretty-lambdas ()
   (font-lock-add-keywords
