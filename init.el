@@ -53,13 +53,16 @@
       inhibit-startup-message t)
 
 (require 'cl)
-(defun font-candidate (&rest fonts)
-  "Return existing font which first match."
+(defun init/font-candidate (&rest fonts)
+  "Return first existing font out of the candidates."
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
-(set-face-attribute
- 'default nil
- :font (font-candidate "Terminus-11" "Courier New-11"))
+(defun init/set-font (font)
+  (set-face-attribute 'default nil :font font))
+
+(let ((font (init/font-candidate "Terminus-11" "Courier New-11")))
+  (when font
+    (init/set-font font)))
 
 (defun esk-pretty-lambdas ()
   (font-lock-add-keywords
