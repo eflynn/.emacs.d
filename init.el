@@ -28,6 +28,8 @@
      (color-theme-initialize)
      (color-theme-midnight)))
 
+(server-start)
+
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
