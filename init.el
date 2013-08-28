@@ -58,11 +58,10 @@
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 (defun init/set-font (font)
-  (set-face-attribute 'default nil :font font))
-
-(let ((font (init/font-candidate "Terminus-11" "Courier New-11")))
   (when font
-    (init/set-font font)))
+    (set-face-attribute 'default nil :font font)))
+
+(init/set-font (init/font-candidate "Terminus-11" "Courier New-11"))
 
 (defun esk-pretty-lambdas ()
   (font-lock-add-keywords
