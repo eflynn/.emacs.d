@@ -44,7 +44,9 @@
 
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
+
 (setq x-select-enable-clipboard t
+      frame-title-format "%b - %F"
       x-select-enable-primary t
       save-interprogram-paste-before-kill t
       apropos-do-all t

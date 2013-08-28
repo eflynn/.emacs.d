@@ -9,6 +9,7 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x w") 'delete-trailing-whitespace)
 
 ;; God mode
 (global-set-key (kbd "<escape>") 'god-local-mode)
