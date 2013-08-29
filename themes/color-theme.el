@@ -30,6 +30,7 @@ fonts."
      (font-lock-function-name-face ((t (:foreground "SlateBlue"))))
      (font-lock-builtin-face ((t (:foreground "SkyBlue"))))
      (highline-face ((t (:background "grey12"))))
+     (fringe ((t (:background "black"))))
      (setnu-line-number-face ((t (:background "Grey15" :foreground "White" :bold t))))
      (show-paren-match-face ((t (:background "grey30"))))
      (region ((t (:background "grey15"))))
