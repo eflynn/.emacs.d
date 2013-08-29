@@ -13,4 +13,8 @@
 
 ;; God mode
 (global-set-key (kbd "<escape>") 'god-local-mode)
+
+;; Load directional window-selection routines
+(windmove-default-keybindings)
+
 (provide 'bindings)

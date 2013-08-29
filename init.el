@@ -1,48 +1,44 @@
-;; Turn off mouse interface early in startup to avoid momentary display
-(menu-bar-mode -1)
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
 
-;; Set path to dependencies
-(setq site-lisp-dir
-      (expand-file-name "site-lisp" user-emacs-directory))
+;; Turn off toolbars, menus, tooltips, and left fringe. This should be
+;; called early in startup to avoid momentary display flash.
+(ignore-errors
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (fringe-mode '(0 . 8)))
 
-;; Set up load path
-(add-to-list 'load-path site-lisp-dir)
+(require 'cl)
+
+;; Set load path
 (add-to-list 'load-path user-emacs-directory)
+(let ((default-directory (format "%s/site-lisp/" user-emacs-directory)))
+  (normal-top-level-add-subdirs-to-load-path))
 
-;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
-
-(require 'magit)
+;; Color theme
 (require 'color-theme)
+(color-theme-initialize)
+(color-theme-midnight)
+
 (require 'bindings)
 (require 'god-mode)
-
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-midnight)))
+(autoload 'magit-status "magit")
 
 (server-start)
 
-(ido-mode t)
+(ido-mode)
 (setq ido-enable-flex-matching t)
+
+;; Configure save-place
+(setq-default save-place t)
+(require 'saveplace)
+(setq save-place-file (concat user-emacs-directory "places"))
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(require 'saveplace)
-(setq-default save-place t)
-
 (column-number-mode 1)
-(windmove-default-keybindings)
-
 (show-paren-mode 1)
+
 (setq-default indent-tabs-mode nil)
 
 (setq x-select-enable-clipboard t
@@ -51,30 +47,16 @@
       save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
-      save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
 					       "backups")))
       inhibit-startup-message t)
 
-(require 'cl)
-(defun init/font-candidate (&rest fonts)
-  "Return first existing font out of the candidates."
-  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+(setq init/font (find-if (lambda (f) (find-font (font-spec :name f)))
+			 '("Terminus-11" "Courier New-11")))
 
-(defun init/set-font (font)
-  (when font
-    (set-face-attribute 'default nil :font font)))
-
-(init/set-font (init/font-candidate "Terminus-11" "Courier New-11"))
-
-(defun esk-pretty-lambdas ()
-  (font-lock-add-keywords
-   nil `(("(?\\(lambda\\>\\)"
-          (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    ,(make-char 'greek-iso8859-7 107))
-                    nil))))))
-
-;;(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
+;; TODO: read up on faces
+(when init/font
+  (set-face-attribute 'default nil :font init/font))
 
 (defconst edawg-java-style
   '((c-basic-offset . 2)
