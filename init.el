@@ -83,3 +83,10 @@
                 lisp-interaction-mode-hook
                 scheme-mode-hook))
   (add-hook hook #'enable-paredit-mode))
+
+(require 'eldoc)
+(eldoc-add-command 'paredit-backward-delete 'paredit-close-round)
+
+(dolist (hook '(emacs-lisp-mode-hook
+                lisp-interaction-mode-hook))
+  (add-hook hook #'turn-on-eldoc-mode))
