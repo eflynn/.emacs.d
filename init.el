@@ -70,3 +70,16 @@
   (c-add-style "Edawg" edawg-java-style t))
 
 (add-hook 'java-mode-hook 'edawg-set-java-style)
+
+;; Paredit support
+
+(autoload 'enable-paredit-mode "paredit"
+  "Turn on pseudo-structural editing of Lisp code." t)
+
+(dolist (hook '(emacs-lisp-mode-hook
+                eval-expression-minibuffer-setup-hook
+                ielm-mode-hook
+                lisp-mode-hook
+                lisp-interaction-mode-hook
+                scheme-mode-hook))
+  (add-hook hook #'enable-paredit-mode))
