@@ -69,7 +69,7 @@
   (setq c-tab-always-indent t)
   (c-add-style "Edawg" edawg-java-style t))
 
-(add-hook 'java-mode-hook 'edawg-set-java-style)
+(add-hook 'java-mode-hook #'edawg-set-java-style)
 
 ;; Paredit support
 
