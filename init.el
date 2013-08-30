@@ -7,8 +7,6 @@
   (scroll-bar-mode -1)
   (fringe-mode '(0 . 8)))
 
-(require 'cl)
-
 ;; Set load path
 (add-to-list 'load-path user-emacs-directory)
 (let ((default-directory (format "%s/site-lisp/" user-emacs-directory)))
@@ -46,12 +44,8 @@
 					       "backups")))
       inhibit-startup-message t)
 
-(setq init/font (find-if (lambda (f) (find-font (font-spec :name f)))
-			 '("Terminus-11" "Courier New-11")))
-
-;; TODO: read up on faces
-(when init/font
-  (set-face-attribute 'default nil :font init/font))
+;; Set default font
+(add-to-list 'default-frame-alist '(font . "Dejavu Sans Mono-10"))
 
 (defconst edawg-java-style
   '((c-basic-offset . 2)
