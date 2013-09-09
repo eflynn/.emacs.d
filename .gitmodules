@@ -4,3 +4,6 @@
 [submodule "site-lisp/god-mode"]
 	path = site-lisp/god-mode
 	url = https://github.com/chrisdone/god-mode.git
+[submodule "site-lisp/multiple-cursors.el"]
+	path = site-lisp/multiple-cursors.el
+	url = https://github.com/magnars/multiple-cursors.el.git
