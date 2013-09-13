@@ -70,6 +70,14 @@
 
 (add-hook 'java-mode-hook #'edawg-set-java-style)
 
+;; Remove javascript-mode
+(setq auto-mode-alist
+      (rassq-delete-all 'javascript-mode auto-mode-alist))
+
+;; Instead, use js2-mode
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 ;; Paredit support
 
 (autoload 'enable-paredit-mode "paredit"
