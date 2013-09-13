@@ -51,7 +51,7 @@
       apropos-do-all t
       mouse-yank-at-point t
       backup-directory-alist `(("." . ,(concat user-emacs-directory
-					       "backups")))
+                                               "backups")))
       inhibit-startup-message t)
 
 ;; Set default font
