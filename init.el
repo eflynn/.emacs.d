@@ -1,10 +1,11 @@
 
-;; Turn off toolbars, menus, tooltips, and left fringe. This should be
-;; called early in startup to avoid momentary display flash.
-(ignore-errors
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
+;; Turn off toolbars, menus, tooltips, and left fringe.
+(menu-bar-mode 0)
+
+(when (display-graphic-p)
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0)
+  (tooltip-mode 0)
   (fringe-mode '(0 . 8)))
 
 ;; Set load path
