@@ -9,11 +9,15 @@
 
 ;; Set load path
 (add-to-list 'load-path user-emacs-directory)
+(setq site-lisp-dir
+      (concat user-emacs-directory "site-lisp/"))
 
-(let ((default-directory (concat user-emacs-directory "site-lisp")))
-  ;; The subdirs file adds the subdirectories of site-lisp
-  ;; to load-path
-  (load (expand-file-name "subdirs.el") nil t t))
+(require 'cl)
+
+(loop for rel in (directory-files site-lisp-dir nil "\\w+")
+      for dir = (concat site-lisp-dir rel)
+      when (file-directory-p dir)
+      do (add-to-list 'load-path dir))
 
 (require 'bindings)
 (require 'god-mode)
