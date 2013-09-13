@@ -30,7 +30,6 @@
 (server-start)
 
 (ido-mode)
-(setq ido-enable-flex-matching t)
 
 ;; Configure save-place
 (setq-default save-place t)
@@ -96,10 +95,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (wheatgrass))))
+ '(custom-enabled-themes (quote (wheatgrass)))
+ '(global-hl-line-mode t)
+ '(ido-enable-flex-matching t)
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(fringe ((t (:background "black"))))
+ '(hl-line ((t (:background "#111111")))))
