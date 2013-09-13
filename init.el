@@ -23,6 +23,9 @@
 (require 'god-mode)
 (autoload 'magit-status "magit")
 
+;; Load multiple-cursors
+(require 'multiple-cursors)
+
 (server-start)
 
 (ido-mode)
