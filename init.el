@@ -9,16 +9,14 @@
   (fringe-mode '(0 . 8)))
 
 ;; Set load path
-(add-to-list 'load-path user-emacs-directory)
-(setq site-lisp-dir
-      (concat user-emacs-directory "site-lisp/"))
+(add-to-list 'load-path (directory-file-name user-emacs-directory))
+(setq site-lisp-dir (concat user-emacs-directory "site-lisp"))
 
-(require 'cl)
+(add-to-list 'load-path site-lisp-dir)
 
-(loop for rel in (directory-files site-lisp-dir nil "\\w+")
-      for dir = (concat site-lisp-dir rel)
-      when (file-directory-p dir)
-      do (add-to-list 'load-path dir))
+(dolist (dir (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p dir)
+    (add-to-list 'load-path (abbreviate-file-name dir))))
 
 (require 'bindings)
 (require 'god-mode)
