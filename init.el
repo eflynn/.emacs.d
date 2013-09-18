@@ -10,11 +10,11 @@
 
 ;; Set load path
 (add-to-list 'load-path (directory-file-name user-emacs-directory))
-(setq site-lisp-dir (concat user-emacs-directory "site-lisp"))
+(setq lisp-dir (concat (file-name-as-directory user-emacs-directory) "lisp"))
 
-(add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path lisp-dir)
 
-(dolist (dir (directory-files site-lisp-dir t "\\w+"))
+(dolist (dir (directory-files lisp-dir t "\\w+"))
   (when (file-directory-p dir)
     (add-to-list 'load-path (abbreviate-file-name dir))))
 

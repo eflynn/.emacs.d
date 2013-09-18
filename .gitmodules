@@ -1,6 +1,6 @@
-[submodule "site-lisp/magit"]
-	path = site-lisp/magit
+[submodule "lisp/magit"]
+	path = lisp/magit
 	url = https://github.com/magit/magit.git
-[submodule "site-lisp/multiple-cursors.el"]
-	path = site-lisp/multiple-cursors.el
+[submodule "lisp/multiple-cursors.el"]
+	path = lisp/multiple-cursors.el
 	url = https://github.com/magnars/multiple-cursors.el.git
