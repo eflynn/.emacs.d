@@ -96,12 +96,16 @@
                 lisp-interaction-mode-hook))
   (add-hook hook #'turn-on-eldoc-mode))
 
+(add-to-list 'custom-theme-load-path
+             (concat (file-name-as-directory user-emacs-directory) "themes"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wheatgrass)))
+ '(custom-safe-themes (quote ("eb8701083acffcb4ae592fb78f236b3d5f62cdc841e2b83cefbbfdd4126f205c" default)))
  '(global-hl-line-mode t)
  '(ido-enable-flex-matching t)
  '(js2-basic-offset 2)
