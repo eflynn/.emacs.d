@@ -19,7 +19,6 @@
     (add-to-list 'load-path (abbreviate-file-name dir))))
 
 (require 'bindings)
-(require 'god-mode)
 (autoload 'magit-status "magit")
 
 ;; Load multiple-cursors
