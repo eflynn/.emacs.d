@@ -53,7 +53,7 @@
 
 (when (eq system-type 'windows-nt)
   ;; Set default font
-  (add-to-list 'default-frame-alist '(font . "Dejavu Sans Mono-10")))
+  (add-to-list 'default-frame-alist '(font . "Consolas-10")))
 
 (defconst edawg-java-style
   '((c-basic-offset . 2)
