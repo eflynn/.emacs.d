@@ -1,0 +1,23 @@
+
+* Keywords
+
+  A keyword is a symbol whose name starts with `:'. Keywords evaluate
+  to themselves and cannot be changed. Any attempt to set or bind a
+  keyword is an error, except setting a keyword to itself.
+
+* Active primary keymaps
+
+  "Active" means in use for finding key bindings.
+
+  Global map is shared by all buffers.
+  Local keymap is associated with a specific major mode.
+  Minor mode keymaps are associated with currently enabled minor modes.
+
+  Local keymap bindings shadow the global bindings.
+  Minor mode keymaps shadow both local and global keymaps.
+
+* Functions to look into
+
+  try-completion
+  completing-read
+  all-completions

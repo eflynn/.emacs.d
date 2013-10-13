@@ -24,3 +24,8 @@ or
 
 C-x RET f undecided-dos
 C-x C-f
+
+Escape Key
+
+If for some reason the escape key isn't behaving in emacs, try
+pressing C-[. See section 9.10 in the Emacs FAQ.
