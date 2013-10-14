@@ -1,5 +1,6 @@
 ;; Bindings
 
+(global-set-key (kbd "<f12>") 'other-window)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -16,11 +17,5 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-;; God mode
-(global-set-key (kbd "<escape>") 'god-local-mode)
-
-;; Load directional window-selection routines
-(windmove-default-keybindings)
 
 (provide 'key-bindings)
