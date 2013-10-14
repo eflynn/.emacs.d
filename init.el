@@ -1,6 +1,8 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "lisp-personal"))
 
+(require 'load-path)
+
 ;; Turn off toolbars, menus, tooltips, and left fringe.
 (menu-bar-mode 0)
 
@@ -9,16 +11,6 @@
   (scroll-bar-mode 0)
   (tooltip-mode 0)
   (fringe-mode '(0 . 8)))
-
-;; Set load path
-(add-to-list 'load-path (directory-file-name user-emacs-directory))
-(setq lisp-dir (concat (file-name-as-directory user-emacs-directory) "lisp"))
-
-(add-to-list 'load-path lisp-dir)
-
-(dolist (dir (directory-files lisp-dir t "\\w+"))
-  (when (file-directory-p dir)
-    (add-to-list 'load-path (abbreviate-file-name dir))))
 
 (require 'key-bindings)
 (autoload 'magit-status "magit")
