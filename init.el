@@ -2,6 +2,7 @@
 (add-to-list 'load-path (concat user-emacs-directory "lisp-personal"))
 
 (require 'load-path)
+(require 'eldoc)
 
 ;; Turn off toolbars, menus, tooltips, and left fringe.
 (menu-bar-mode 0)
@@ -58,8 +59,8 @@
                 scheme-mode-hook))
   (add-hook hook #'enable-paredit-mode))
 
-(require 'eldoc)
-(eldoc-add-command 'paredit-backward-delete 'paredit-close-round)
+(eval-after-load 'eldoc
+  '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
 
 (dolist (hook '(emacs-lisp-mode-hook
                 lisp-interaction-mode-hook))
