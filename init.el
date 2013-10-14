@@ -67,7 +67,7 @@
   (add-hook hook #'turn-on-eldoc-mode))
 
 (add-to-list 'custom-theme-load-path
-             (concat (file-name-as-directory user-emacs-directory) "themes"))
+             (concat user-emacs-directory "themes"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
