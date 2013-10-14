@@ -1,4 +1,6 @@
 
+(add-to-list 'load-path (concat user-emacs-directory "lisp-personal"))
+
 ;; Turn off toolbars, menus, tooltips, and left fringe.
 (menu-bar-mode 0)
 
@@ -18,7 +20,7 @@
   (when (file-directory-p dir)
     (add-to-list 'load-path (abbreviate-file-name dir))))
 
-(require 'bindings)
+(require 'key-bindings)
 (autoload 'magit-status "magit")
 
 ;; Load multiple-cursors

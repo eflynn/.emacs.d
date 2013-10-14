@@ -23,4 +23,4 @@
 ;; Load directional window-selection routines
 (windmove-default-keybindings)
 
-(provide 'bindings)
+(provide 'key-bindings)
