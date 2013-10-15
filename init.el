@@ -18,7 +18,7 @@
       apropos-do-all t
       ido-enable-flex-matching t
       mouse-yank-at-point t
-      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+      make-backup-files nil
       inhibit-startup-message t)
 
 (server-start)
