@@ -5,19 +5,13 @@
 (require 'load-path)
 (require 'languages)
 (require 'key-bindings)
-(autoload 'magit-status "magit")
-
-;; Load multiple-cursors
+(require 'magit)
 (require 'multiple-cursors)
 
 (server-start)
 
 (ido-mode)
 
-;; Configure save-place
-(setq-default save-place t)
-(require 'saveplace)
-(setq save-place-file (concat user-emacs-directory "places"))
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
