@@ -17,16 +17,11 @@
 (add-hook 'java-mode-hook #'edawg-set-java-style)
 
 ;; Use js2-mode for Javascript
-
-(defun turn-off-tabs ()
-  (setq indent-tabs-mode nil))
-
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-hook 'js2-mode-hook
           '(lambda ()
-             (turn-off-tabs)
              (setq js2-basic-offset 2
                    js2-bounce-indent-p t)))
 
@@ -36,8 +31,7 @@
                 lisp-mode-hook
                 lisp-interaction-mode-hook
                 scheme-mode-hook))
-  (add-hook hook 'enable-paredit-mode)
-  (add-hook hook 'turn-off-tabs))
+  (add-hook hook 'enable-paredit-mode))
 
 (eval-after-load 'eldoc
   '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
