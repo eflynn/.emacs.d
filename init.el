@@ -50,22 +50,6 @@
   ;; Set default font
   (add-to-list 'default-frame-alist '(font . "Consolas-10")))
 
-;; Add paredit to hooks
-(dolist (hook '(emacs-lisp-mode-hook
-                eval-expression-minibuffer-setup-hook
-                ielm-mode-hook
-                lisp-mode-hook
-                lisp-interaction-mode-hook
-                scheme-mode-hook))
-  (add-hook hook #'enable-paredit-mode))
-
-(eval-after-load 'eldoc
-  '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
-
-(dolist (hook '(emacs-lisp-mode-hook
-                lisp-interaction-mode-hook))
-  (add-hook hook #'turn-on-eldoc-mode))
-
 (add-to-list 'custom-theme-load-path
              (concat user-emacs-directory "themes"))
 
