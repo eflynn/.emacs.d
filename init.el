@@ -9,7 +9,8 @@
 (require 'multiple-cursors)
 (require 'uniquify)
 
-(setf frame-title-format "%b - %F"
+(setf auto-save-default nil
+      frame-title-format "%b - %F"
       ido-enable-flex-matching t
       (default-value 'indent-tabs-mode) nil
       inhibit-startup-message t
