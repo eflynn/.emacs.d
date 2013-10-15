@@ -77,9 +77,7 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(custom-safe-themes (quote ("eb8701083acffcb4ae592fb78f236b3d5f62cdc841e2b83cefbbfdd4126f205c" default)))
  '(global-hl-line-mode t)
- '(ido-enable-flex-matching t)
- '(js2-basic-offset 2)
- '(js2-bounce-indent-p t))
+ '(ido-enable-flex-matching t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
