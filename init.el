@@ -2,7 +2,7 @@
 (add-to-list 'load-path (concat user-emacs-directory "lisp-personal"))
 
 (require 'load-path)
-(require 'eldoc)
+(require 'languages)
 
 ;; Turn off toolbars, menus, tooltips, and left fringe.
 (menu-bar-mode 0)
@@ -33,8 +33,6 @@
 
 (column-number-mode 1)
 (show-paren-mode 1)
-
-(setq-default indent-tabs-mode nil)
 
 (setq x-select-enable-clipboard t
       frame-title-format "%b - %F"
