@@ -15,6 +15,7 @@
       (default-value 'indent-tabs-mode) nil
       inhibit-startup-message t
       make-backup-files nil
+      (symbol-function 'yes-or-no-p) 'y-or-n-p
       mouse-yank-at-point t
       save-interprogram-paste-before-kill t
       uniquify-buffer-name-style 'forward
