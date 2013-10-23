@@ -25,7 +25,6 @@
 (ido-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
-(global-hl-line-mode 1)
 
 (add-to-list 'custom-theme-load-path
              (concat user-emacs-directory "themes"))

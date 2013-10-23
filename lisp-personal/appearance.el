@@ -15,7 +15,5 @@
   (add-to-list 'default-frame-alist '(font . "Consolas-10")))
 
 (set-face-background 'fringe "black")
-(eval-after-load 'hl-line
-  '(set-face-background 'hl-line "#111111"))
 
 (provide 'appearance)
