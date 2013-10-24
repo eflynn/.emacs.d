@@ -22,7 +22,6 @@
       x-select-enable-clipboard t
       x-select-enable-primary t)
 
-(server-start)
 (ido-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
