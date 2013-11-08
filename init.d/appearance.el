@@ -11,6 +11,9 @@
         (right-fringe . 8)))
 
 ;; Set theme
+(add-to-list 'custom-theme-load-path
+             (concat user-emacs-directory "themes"))
+
 (load-theme 'wheatgrass t)
 
 (setq window-system-default-frame-alist
