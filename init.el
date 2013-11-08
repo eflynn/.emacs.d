@@ -1,5 +1,5 @@
 
-(add-to-list 'load-path (concat user-emacs-directory "lisp-personal"))
+(add-to-list 'load-path (concat user-emacs-directory "init.d"))
 
 (require 'appearance)
 (require 'load-path)
