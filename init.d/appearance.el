@@ -16,6 +16,8 @@
 
 (load-theme 'wheatgrass t)
 
+(add-hook 'prog-mode-hook 'show-paren-mode)
+
 (setq window-system-default-frame-alist
       '((w32 . ((font . "Consolas-10")))))
 
