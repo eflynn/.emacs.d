@@ -2,19 +2,20 @@
 (require 'tool-bar)
 (require 'tooltip)
 
+(menu-bar-mode 0)
 (tooltip-mode 0)
 (tool-bar-mode 0)
 
 (setq default-frame-alist
-      '((menu-bar-lines . 0)
-        (left-fringe . 0)
+      '((left-fringe . 0)
         (right-fringe . 8)))
 
 ;; Set theme
-(add-to-list 'custom-theme-load-path
-             (concat user-emacs-directory "themes"))
+(when (> emacs-major-version 23)
+  (add-to-list 'custom-theme-load-path
+	       (concat user-emacs-directory "themes"))
 
-(load-theme 'wheatgrass t)
+  (load-theme 'wheatgrass t))
 
 (add-hook 'prog-mode-hook 'show-paren-mode)
 
