@@ -36,5 +36,3 @@
   '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
 
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
-
-(provide 'languages)
