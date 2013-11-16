@@ -23,5 +23,3 @@
       '((w32 (font . "Consolas-10"))))
 
 (set-face-background 'fringe "black")
-
-(provide 'appearance)
