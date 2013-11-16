@@ -29,15 +29,12 @@
                 eval-expression-minibuffer-setup-hook
                 ielm-mode-hook
                 lisp-mode-hook
-                lisp-interaction-mode-hook
                 scheme-mode-hook))
   (add-hook hook 'paredit-mode))
 
 (eval-after-load 'eldoc
   '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
 
-(dolist (hook '(emacs-lisp-mode-hook
-                lisp-interaction-mode-hook))
-  (add-hook hook 'eldoc-mode))
+(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 
 (provide 'languages)
