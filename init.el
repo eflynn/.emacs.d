@@ -22,6 +22,7 @@
       frame-title-format "%b - %F"
       ido-enable-flex-matching t
       (default-value 'indent-tabs-mode) nil
+      inhibit-default-init t
       inhibit-startup-message t
       make-backup-files nil
       (symbol-function 'yes-or-no-p) 'y-or-n-p
