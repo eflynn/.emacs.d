@@ -1,4 +1,6 @@
 ;; Bindings
+(require 'magit)
+(require 'multiple-cursors)
 
 (global-set-key (kbd "<f12>") 'other-window)
 (global-set-key (kbd "M-/") 'hippie-expand)
