@@ -11,11 +11,8 @@
         (right-fringe . 8)))
 
 ;; Set theme
-(when (> emacs-major-version 23)
-  (add-to-list 'custom-theme-load-path
-	       (concat user-emacs-directory "themes"))
-
-  (load-theme 'wheatgrass t))
+(add-to-list 'custom-theme-load-path (locate-user-emacs-file "themes"))
+(load-theme 'wheatgrass t)
 
 (add-hook 'prog-mode-hook 'show-paren-mode)
 
