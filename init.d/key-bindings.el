@@ -1,7 +1,4 @@
 ;; Bindings
-(require 'magit)
-(require 'multiple-cursors)
-
 (global-set-key (kbd "<f12>") 'other-window)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -19,3 +16,6 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Smex
+(global-set-key (kbd "M-x") 'smex)

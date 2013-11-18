@@ -1,16 +1,33 @@
 
-(let ((lisp-dir (locate-user-emacs-file "lisp"))
-      (--subdirs (lambda (d) (directory-files d t "\\w+"))))
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(setq package-enable-at-startup nil)
 
-  (add-to-list 'load-path lisp-dir t)
-  (require 'cl-lib)
+(package-initialize)
 
-  (let ((subdirs
-         (mapcar
-          'abbreviate-file-name
-          (cl-remove-if-not 'file-directory-p (funcall --subdirs lisp-dir)))))
-    (setq load-path (append load-path subdirs)))
+(unless package-archive-contents
+  (package-refresh-contents))
 
-  ;; Bootstrap init.d files
-  (dolist (init-file (funcall --subdirs (locate-user-emacs-file "init.d")))
-    (load init-file t t)))
+(defvar my-packages
+  '(clojure-mode
+    clojure-test-mode
+    cider
+    js2-mode
+    magit
+    multiple-cursors
+    paredit
+    php-mode
+    smex
+    yasnippet)
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p my-packages)
+  (unless (package-installed-p p)
+    (package-install p)))
+
+;; Load settings from init.d
+(let* ((dir (locate-user-emacs-file "init.d"))
+       (files (directory-files dir nil "\\w+")))
+  (dolist (f files)
+    (load (expand-file-name f dir) t t)))
