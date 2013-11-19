@@ -1,7 +1,5 @@
 ;;; languages.el --- configuration for various programming languages 
 
-(require 'paredit)
-
 ;; Java indentation
 
 (defconst edawg-java-style
