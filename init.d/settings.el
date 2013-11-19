@@ -1,6 +1,7 @@
 ;; Settings
 
 (require 'uniquify)
+(require 'ido)
 
 (setf auto-save-default nil
       frame-title-format "%b - %F"

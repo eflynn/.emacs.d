@@ -31,4 +31,4 @@
 (let* ((dir (locate-user-emacs-file "init.d"))
        (files (directory-files dir nil "\\w+")))
   (dolist (f files)
-    (load (expand-file-name f dir) t t)))
+    (load (expand-file-name (file-name-sans-extension f) dir) t t)))
