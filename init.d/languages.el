@@ -26,7 +26,6 @@
                    js2-bounce-indent-p t)))
 
 (dolist (hook '(emacs-lisp-mode-hook
-                eval-expression-minibuffer-setup-hook
                 ielm-mode-hook
                 lisp-mode-hook
                 scheme-mode-hook))
