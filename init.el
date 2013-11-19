@@ -13,6 +13,7 @@
   '(clojure-mode
     clojure-test-mode
     cider
+    idle-highlight-mode
     js2-mode
     magit
     multiple-cursors
