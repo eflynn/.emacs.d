@@ -15,6 +15,8 @@
 (load-theme 'wheatgrass t)
 
 (add-hook 'prog-mode-hook 'show-paren-mode)
+(require 'pretty-symbols-autoloads)
+(add-hook 'emacs-lisp-mode-hook 'pretty-symbols-mode)
 
 (setq window-system-default-frame-alist
       '((w32 (font . "Consolas-10"))))

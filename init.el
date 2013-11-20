@@ -1,4 +1,6 @@
 
+(add-to-list 'load-path (locate-user-emacs-file "lisp"))
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
