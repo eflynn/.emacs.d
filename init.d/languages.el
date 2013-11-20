@@ -5,6 +5,7 @@
 
 (require 'cc-mode)
 (require 'js2-mode)
+(require 'sh-script)
 
 ;; Java indentation
 
@@ -34,6 +35,8 @@
             (if (derived-mode-p 'ielm-mode 'lisp-mode 'scheme-mode
                                 'emacs-lisp-mode)
                 (paredit-mode))))
+
+(setq sh-basic-offset 2)
 
 (eval-after-load 'eldoc
   '(eldoc-add-command 'paredit-backward-delete 'paredit-close-round))
