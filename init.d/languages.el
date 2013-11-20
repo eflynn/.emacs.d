@@ -6,6 +6,7 @@
 (require 'cc-mode)
 (require 'js2-mode)
 (require 'sh-script)
+(require 'markdown-mode)
 
 ;; Java indentation
 
