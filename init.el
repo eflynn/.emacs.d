@@ -3,7 +3,7 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (setq package-enable-at-startup nil)
 
 (package-initialize)

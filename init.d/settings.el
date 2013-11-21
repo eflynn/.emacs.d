@@ -17,5 +17,6 @@
       x-select-enable-clipboard t
       x-select-enable-primary t)
 
-(add-hook 'emacs-startup-hook 'ido-mode)
-(add-hook 'emacs-startup-hook 'column-number-mode)
+(ido-mode)
+(column-number-mode)
+(yas-global-mode)
