@@ -16,6 +16,7 @@
     clojure-test-mode
     cider
     idle-highlight-mode
+    key-chord
     js2-mode
     magit
     multiple-cursors
