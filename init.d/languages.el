@@ -24,6 +24,7 @@
 
 ;; Use js2-mode for Javascript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
 (add-hook 'js2-mode-hook
